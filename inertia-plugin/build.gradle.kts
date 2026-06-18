@@ -1,6 +1,7 @@
 plugins {
     id("java")
     id("xyz.jpenilla.run-paper") version "3.0.2"
+    id("com.gradleup.shadow") version "9.4.2"
 }
 
 dependencies {
@@ -34,4 +35,9 @@ tasks {
     }
     // runFolia
     runPaper.folia.registerTask()
+
+    shadowJar {
+        configurations = project.configurations.runtimeClasspath.map { setOf(it) }
+        archiveClassifier.set("")
+    }
 }
