@@ -1,0 +1,9 @@
+target/
+build/
+.m2/
+.idea/
+.vscode/
+*.class
+*.log
+reffrences_codes/
+references_codes/
