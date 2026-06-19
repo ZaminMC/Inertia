@@ -8,7 +8,7 @@ public final class VersionProfiles {
             "LEGACY_1_8",
             ProfileFamily.LEGACY_1_8,
             new VersionRange(GameVersion.of(1, 8, 0), GameVersion.of(1, 8, 99)),
-            new SimpleMovementRules(0.5D, 0.91D, 0.13D),
+            new SimpleMovementRules(0.5D, 0.91D, 0.13D, 0.36D, 0.62D, 4.2D),
             new SimpleCollisionRules(true),
             new SimpleFluidRules(0.8D, 0.5D, false),
             new SimplePacketRules(true, true),
@@ -19,7 +19,7 @@ public final class VersionProfiles {
             "LEGACY_1_12",
             ProfileFamily.LEGACY_1_12,
             new VersionRange(GameVersion.of(1, 9, 0), GameVersion.of(1, 12, 99)),
-            new SimpleMovementRules(0.6D, 0.91D, 0.13D),
+            new SimpleMovementRules(0.6D, 0.91D, 0.13D, 0.37D, 0.62D, 4.3D),
             new SimpleCollisionRules(true),
             new SimpleFluidRules(0.8D, 0.5D, false),
             new SimplePacketRules(true, true),
@@ -30,7 +30,7 @@ public final class VersionProfiles {
             "FLATTENING_1_13",
             ProfileFamily.FLATTENING_1_13,
             new VersionRange(GameVersion.of(1, 13, 0), GameVersion.of(1, 13, 99)),
-            new SimpleMovementRules(0.6D, 0.91D, 0.13D),
+            new SimpleMovementRules(0.6D, 0.91D, 0.13D, 0.37D, 0.62D, 4.3D),
             new SimpleCollisionRules(false),
             new SimpleFluidRules(0.8D, 0.5D, true),
             new SimplePacketRules(true, true),
@@ -41,7 +41,7 @@ public final class VersionProfiles {
             "MODERN",
             ProfileFamily.MODERN,
             new VersionRange(GameVersion.of(1, 14, 0), GameVersion.of(1, 20, 99)),
-            new SimpleMovementRules(0.6D, 0.91D, 0.13D),
+            new SimpleMovementRules(0.6D, 0.91D, 0.13D, 0.37D, 0.62D, 4.3D),
             new SimpleCollisionRules(false),
             new SimpleFluidRules(0.8D, 0.5D, true),
             new SimplePacketRules(true, true),
@@ -52,7 +52,7 @@ public final class VersionProfiles {
             "LATEST_KNOWN",
             ProfileFamily.LATEST_KNOWN,
             new VersionRange(GameVersion.of(1, 21, 0), GameVersion.of(1, 21, 99)),
-            new SimpleMovementRules(0.6D, 0.91D, 0.13D),
+            new SimpleMovementRules(0.6D, 0.91D, 0.13D, 0.37D, 0.62D, 4.3D),
             new SimpleCollisionRules(false),
             new SimpleFluidRules(0.8D, 0.5D, true),
             new SimplePacketRules(true, true),
@@ -66,4 +66,3 @@ public final class VersionProfiles {
         return List.of(LEGACY_1_8, LEGACY_1_12, FLATTENING_1_13, MODERN, LATEST_KNOWN);
     }
 }
-

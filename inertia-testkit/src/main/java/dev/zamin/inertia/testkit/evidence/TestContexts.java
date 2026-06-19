@@ -14,15 +14,18 @@ public final class TestContexts {
     }
 
     public static FalsePositiveContext teleportCorrection() {
-        return new FalsePositiveContext(true, false, LatencyContext.normal(), ServerHealthContext.healthy());
+        return new FalsePositiveContext(true, false, 1.0D, LatencyContext.normal(), ServerHealthContext.healthy());
     }
 
     public static FalsePositiveContext latencySpike() {
-        return new FalsePositiveContext(false, false, LatencyContext.spike(350, 0.25D), ServerHealthContext.healthy());
+        return new FalsePositiveContext(false, false, 1.0D, LatencyContext.spike(350, 0.25D), ServerHealthContext.healthy());
     }
 
     public static FalsePositiveContext tpsDrop() {
-        return new FalsePositiveContext(false, false, LatencyContext.normal(), ServerHealthContext.degraded(14.5D, 0.4D));
+        return new FalsePositiveContext(false, false, 1.0D, LatencyContext.normal(), ServerHealthContext.degraded(14.5D, 0.4D));
+    }
+
+    public static FalsePositiveContext velocityGrace(double reductionMultiplier) {
+        return new FalsePositiveContext(false, true, reductionMultiplier, LatencyContext.normal(), ServerHealthContext.healthy());
     }
 }
-

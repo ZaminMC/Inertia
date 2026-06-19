@@ -48,6 +48,16 @@ The first implementation pass covers:
 * false-positive context for teleports, velocity grace, latency spikes, and server-health drops
 * required tests for evidence accumulation, decay, reductions, and trace output
 
+The repository now also includes the first movement prediction skeleton:
+
+* movement state tracking across frames
+* basic horizontal and vertical sanity limits from version profiles
+* teleport grace and velocity grace handling
+* movement debug traces
+* scenario-driven movement tests
+
+This is still a foundation pass, not full vanilla movement parity.
+
 ## Reference policy
 
 Local reference projects may be inspected for category-level research only.
@@ -56,3 +66,4 @@ They are not part of Inertia and must not be copied into this repository.
 
 See [docs/reference-policy.md](docs/reference-policy.md).
 
+For the current engine boundaries and movement limits, see [docs/architecture.md](docs/architecture.md).

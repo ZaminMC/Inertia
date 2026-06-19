@@ -18,5 +18,8 @@ public final class InMemoryDebugTrace implements DebugTrace {
     public List<DebugTraceEntry> entries() {
         return List.copyOf(entries);
     }
-}
 
+    public void appendAll(DebugTrace trace) {
+        entries.addAll(trace.entries());
+    }
+}

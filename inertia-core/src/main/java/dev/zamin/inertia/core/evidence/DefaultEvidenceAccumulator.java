@@ -51,6 +51,14 @@ public final class DefaultEvidenceAccumulator implements EvidenceAccumulator {
             reason = "latency spike reduction";
         }
 
+        if (context.velocityGraceActive() && evidence.sensitivity().reduceDuringVelocityGrace()) {
+            appliedWeight *= context.velocityGraceReductionMultiplier();
+            decision = EvidenceDecision.REDUCED;
+            reason = decision == EvidenceDecision.REDUCED && !"accepted".equals(reason)
+                    ? reason + ", velocity grace reduction"
+                    : "velocity grace reduction";
+        }
+
         if (evidence.sensitivity().serverSensitive() && context.serverHealth().degraded()) {
             appliedWeight *= context.serverHealth().reductionMultiplier();
             decision = EvidenceDecision.REDUCED;
@@ -103,4 +111,3 @@ public final class DefaultEvidenceAccumulator implements EvidenceAccumulator {
         }
     }
 }
-

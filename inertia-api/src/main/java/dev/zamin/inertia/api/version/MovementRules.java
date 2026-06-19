@@ -7,5 +7,10 @@ public interface MovementRules {
     double groundFriction();
 
     double sprintAcceleration();
-}
 
+    double maxHorizontalDistance();
+
+    double maxVerticalRise();
+
+    double maxVerticalDrop();
+}
